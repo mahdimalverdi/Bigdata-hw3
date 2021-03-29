@@ -2,3 +2,6 @@ hadoop jar hadoop-streaming-2.7.1.jar -D mapred.reduce.tasks=16 \
 -file mapper.py    -mapper mapper.py \
 -file reducer.py   -reducer reducer.py \
 -input /user/ebrahimi/file500.txt -output /user/malverdi/hw-3/result500
+
+
+hadoop fs -cat /output/of/wordcount/part* | sort -n -k2 -r | head -n20

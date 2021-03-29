@@ -1,17 +1,11 @@
 #!/usr/bin/python3
 import sys
 
-
-def read_input(file):
-    for line in file:
-        yield line.split()
-
-
 def main(separator='\t'):
     lines = []
-    data = read_input(sys.stdin)
-    for line in data:
-        for word in line:
+    
+    for line in sys.stdin.readlines():
+        for word in line.split():
             if not word.isspace() and word:
                 lines.append('%s%s%d' % (word, separator, 1))
     print('\n'.join(lines))
