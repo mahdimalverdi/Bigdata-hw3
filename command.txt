@@ -4,4 +4,5 @@ hadoop jar hadoop-streaming-2.7.1.jar -D mapred.reduce.tasks=16 \
 -input /user/ebrahimi/file500.txt -output /user/malverdi/hw-3/result500
 
 
-hadoop fs -cat /output/of/wordcount/part* | sort -n -k2 -r | head -n20
+hadoop fs -cat /user/malverdi/hw-3/result500/* | sort -n -k2 -r | head -n20
+hadoop fs -cat /user/malverdi/hw-3/result500/* | wc -l
