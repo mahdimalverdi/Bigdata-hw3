@@ -19,6 +19,7 @@ def main(separator='\t'):
             lines.append("%s%s%d" % (current_word, separator, total_count))
         except ValueError:
             pass
+        
     print('\n'.join(lines))
 
 if __name__ == "__main__":
